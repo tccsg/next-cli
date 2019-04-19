@@ -1,7 +1,7 @@
 {
-  "name": "demo",
+  "name": "nextcli-demo",
   "version": "1.0.0",
-  "description": "demo",
+  "description": "nextcli-demo",
   "author": "GeniusChenSG",
   "private": true,
   "scripts": {

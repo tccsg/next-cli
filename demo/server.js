@@ -11,13 +11,7 @@ app.prepare().then(() => {
     const parsedUrl = parse(req.url, true)
     const { pathname, query } = parsedUrl
     handle(req, res, parsedUrl)
-    // if (pathname.match(/^\/helps\/.+/)) {
-    //   const reg = /[^\/helps\/]/
-    //   const id = reg.exec(pathname)[0]
-    //   app.render(req, res, '/Help/help', {id})
-    // } else {
-    //   handle(req, res, parsedUrl)
-    // }
+    // app.render(req, res, 'xxx', {})
   }).listen(3002, err => {
     if (err) throw err
     console.log('> Ready on http://localhost:3002')
