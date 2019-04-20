@@ -1,4 +1,5 @@
 ![](https://img.shields.io/travis/tccsg/next-cli.svg?style=flat-square)
+![](https://img.shields.io/github/license/tccsg/next-cli.svg?style=flat-square)
 
 # next-cli
 快速构建nextjs应用
