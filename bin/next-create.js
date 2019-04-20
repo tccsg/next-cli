@@ -4,6 +4,8 @@ const chalk = require('chalk')
 const inquirer = require('inquirer')
 const exists = require('fs').existsSync
 const generate = require('../lib/generate')
+const download = require('download-git-repo')
+const ora = require('ora')
 
 /**
  * 注册一个help的命令
@@ -58,6 +60,17 @@ function run () {
   if (exists(tem)) {
     generate(rawName, tem, to, (err) => {  // 构建完成的回调函数
       if (err) console.log(err)  // 如果构建失败就输出失败原因
+    })
+  } else {
+    const spinner = ora('downloading template')
+    spinner.start()
+    download(`tccsg/next-template`, tem, err => {
+      spinner.stop()
+      if (err) return
+      console.log(chalk.green(`模版下载完成 ${tem}`))
+      generate(rawName, tem, to, (err) => {  // 构建完成的回调函数
+        if (err) console.log(err)  // 如果构建失败就输出失败原因
+      })
     })
   }
 }
